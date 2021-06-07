@@ -1,11 +1,11 @@
 var choices = ['rock', 'paper', 'scissors'];
-var player_choice = prompt("Enter your choice");
+var player_choice = '';
+
 function computerplay (arr)
 {
     var random_index = Math.floor(Math.random()*3);
     return arr[random_index];
 }
-var compchoice = computerplay(choices);
 
 function playgame(player, computer)
 {
@@ -25,6 +25,16 @@ function playgame(player, computer)
         return 'Computer Wins';
     }
 }
-console.log(player_choice);
-console.log(compchoice);
-console.log(playgame(player_choice, compchoice));
+
+var btn = document.querySelectorAll('button');
+btn.forEach((button) => 
+{
+    button.addEventListener('click', () =>
+    {
+        player_choice = button.value;
+        var compchoice = computerplay(choices);
+        console.log(player_choice);
+        console.log(compchoice);
+        console.log(playgame(player_choice, compchoice));
+    })
+})
