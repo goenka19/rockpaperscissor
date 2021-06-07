@@ -35,6 +35,12 @@ btn.forEach((button) =>
         var compchoice = computerplay(choices);
         console.log(player_choice);
         console.log(compchoice);
-        console.log(playgame(player_choice, compchoice));
+        var result = playgame(player_choice, compchoice);
+        console.log(result);
+
+        var div = document.querySelector('div'); //dom
+        var results = document.createElement('h3');//dom
+        results.textContent = result;
+        div.appendChild(results);
     })
 })
